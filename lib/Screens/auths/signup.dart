@@ -21,7 +21,8 @@ class _SignupState extends State<Signup> {
     final formKey = GlobalKey<FormState>();
 
     Future<Map<String, dynamic>> signup(String email, String password, String username) async {
-      final url = Uri.parse('https://renz-backend.onrender.com/signup');
+      final url = Uri.parse('https://renz-backend.onrender.com/reg');
+      // final url = Uri.parse('https://localhost:3000/signup');
       final response = await http.post(
         url,
         headers: {
