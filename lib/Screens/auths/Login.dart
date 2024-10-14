@@ -43,7 +43,7 @@ class _LoginState extends State<Login> {
           listener: (context, state) {
             if (state is LoginSuccesfull) {
               Navigator.pushReplacement(
-                  context, MaterialPageRoute(builder: (context) => Home()));
+                  context, MaterialPageRoute(builder: (context) => const Home()));
             } else if (state is LoginFailure) {
               ScaffoldMessenger.of(context)
                   .showSnackBar(SnackBar(content: Text(state.msg)));
@@ -52,7 +52,7 @@ class _LoginState extends State<Login> {
           child: BlocBuilder<AuthsBloc, AuthsState>(
             builder: (context, state) {
               if(state is IsLoading){
-                return Center(
+                return const Center(
                   child: CircularProgressIndicator(),
                 );
               }
@@ -151,9 +151,9 @@ class _LoginState extends State<Login> {
                     height: 60,
                     child: ElevatedButton(
                       style: const ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll(
+                        backgroundColor: WidgetStatePropertyAll(
                             Color.fromARGB(255, 96, 85, 216)),
-                        elevation: MaterialStatePropertyAll(30),
+                        elevation: WidgetStatePropertyAll(30),
                       ),
                       onPressed: handleRealLogin,
                       child: Text(

@@ -47,7 +47,7 @@ class _SignupState extends State<Signup> {
             listener: (context, state) {
               if (state is RegSucess) {
                 Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => Login()));
+                    context, MaterialPageRoute(builder: (context) => const Login()));
               } else if (state is RegFailure) {
                 Navigator.of(context).pop(); // Dismiss the loading dialog
                 ScaffoldMessenger.of(context)
@@ -56,12 +56,10 @@ class _SignupState extends State<Signup> {
               child:BlocBuilder<AuthsBloc, AuthsState>(
                 builder: (context, state) {
                   if(state is IsLoading){
-                    if(state is IsLoading){
-                return Center(
-                  child: CircularProgressIndicator(),
-                );
-              }
-                  }
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+                              }
                   return Column(
                     children: <Widget>[
                       const SizedBox(height: 40),
