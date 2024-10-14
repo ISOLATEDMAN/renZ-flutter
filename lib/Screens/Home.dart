@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
       body: Center(
         child: Column(
           children: [
-            Text(token.toString())
+            Text(token.toString(),maxLines: 2,)
           ],
         ),
       ),

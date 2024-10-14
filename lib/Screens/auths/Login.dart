@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:frontend/Screens/Home.dart';
 import 'package:frontend/Screens/auths/signup.dart';
+import 'package:frontend/Screens/baseBottomNavBar.dart';
 import 'package:frontend/blocs/auths/bloc/auths_bloc.dart';
+import 'package:frontend/constants/appConst.dart';
 import 'package:frontend/main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
@@ -35,7 +37,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 249, 249, 249),
+      backgroundColor: AppConst.backgroundWhite,
       appBar: AppBar(),
       body: Form(
         key: formKeyy,
@@ -43,7 +45,7 @@ class _LoginState extends State<Login> {
           listener: (context, state) {
             if (state is LoginSuccesfull) {
               Navigator.pushReplacement(
-                  context, MaterialPageRoute(builder: (context) => const Home()));
+                  context, MaterialPageRoute(builder: (context) => const Basebottomnavbar()));
             } else if (state is LoginFailure) {
               ScaffoldMessenger.of(context)
                   .showSnackBar(SnackBar(content: Text(state.msg)));
@@ -80,22 +82,22 @@ class _LoginState extends State<Login> {
                       controller: email,
                       decoration: const InputDecoration(
                         labelText: "Email",
-                        fillColor: Color.fromARGB(255, 255, 255, 255),
+                        fillColor: AppConst.backgroundWhite,
                         filled: true,
                         hintText: "Enter Email",
                         hintStyle: TextStyle(
-                            color: Color.fromARGB(255, 155, 155, 155)),
+                            color: AppConst.greyTextfield),
                         labelStyle: TextStyle(
-                            color: Color.fromARGB(255, 155, 155, 155)),
+                            color: AppConst.greyTextfield),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                               width: 5,
-                              color: Color.fromARGB(255, 255, 255, 255)),
+                              color: AppConst.backgroundWhite),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                               width: 5,
-                              color: Color.fromARGB(255, 255, 255, 255)),
+                              color: AppConst.backgroundWhite),
                           borderRadius: BorderRadius.all(Radius.circular(8.0)),
                         ),
                       ),
@@ -111,40 +113,39 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   const SizedBox(height: 10),
-                  SizedBox(
-                    width: 350,
-                    height: 75,
-                    child: TextFormField(
-                      controller: pass,
-                      decoration: const InputDecoration(
-                        labelText: "Password",
-                        fillColor: Color.fromARGB(255, 255, 255, 255),
-                        filled: true,
-                        hintText: "Enter Password",
-                        hintStyle: TextStyle(
-                            color: Color.fromARGB(255, 155, 155, 155)),
-                        labelStyle: TextStyle(
-                            color: Color.fromARGB(255, 155, 155, 155)),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              width: 5,
-                              color: Color.fromARGB(255, 255, 255, 255)),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              width: 5,
-                              color: Color.fromARGB(255, 255, 255, 255)),
-                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                   SizedBox(
+                        width: 350,
+                        height: 75,
+                        child: TextFormField(
+                          controller: pass,
+                          decoration: const InputDecoration(
+                            labelText: "Password",
+                            fillColor: AppConst.backgroundWhite,
+                            filled: true,
+                            hintText: "Enter Password",
+                            hintStyle: TextStyle(
+                                color: AppConst.greyTextfield),
+                            labelStyle: TextStyle(
+                                color: AppConst.greyTextfield),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(width: 5, color: AppConst.backgroundWhite),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(width: 5, color: AppConst.backgroundWhite),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(8.0)),
+                            ),
+                          ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return "Please enter a password";
+                            }
+                            return null;
+                          },
                         ),
                       ),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return "Please enter a password";
-                        }
-                        return null;
-                      },
-                    ),
-                  ),
                   const SizedBox(height: 20),
                   SizedBox(
                     width: 350,
@@ -152,14 +153,14 @@ class _LoginState extends State<Login> {
                     child: ElevatedButton(
                       style: const ButtonStyle(
                         backgroundColor: WidgetStatePropertyAll(
-                            Color.fromARGB(255, 96, 85, 216)),
+                            AppConst.themeColorPurple),
                         elevation: WidgetStatePropertyAll(30),
                       ),
                       onPressed: handleRealLogin,
                       child: Text(
                         "Login",
                         style: GoogleFonts.poppins(
-                          color: Colors.white,
+                          color: AppConst.backgroundWhite,
                           fontSize: 30,
                         ),
                       ),
@@ -176,7 +177,7 @@ class _LoginState extends State<Login> {
                           "SignUp",
                           style: GoogleFonts.poppins(
                             fontSize: 20,
-                            color: Colors.blue,
+                            color: AppConst.blueColor,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

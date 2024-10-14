@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:frontend/Screens/auths/Login.dart';
 import 'package:frontend/blocs/auths/bloc/auths_bloc.dart';
+import 'package:frontend/constants/appConst.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 
@@ -82,20 +83,20 @@ class _SignupState extends State<Signup> {
                           controller: emailController,
                           decoration: const InputDecoration(
                             labelText: "Email",
-                            fillColor: Colors.white,
+                            fillColor: AppConst.backgroundWhite,
                             filled: true,
                             hintText: "Enter Email",
                             hintStyle: TextStyle(
-                                color: Color.fromARGB(255, 155, 155, 155)),
+                                color: AppConst.greyTextfield),
                             labelStyle: TextStyle(
-                                color: Color.fromARGB(255, 155, 155, 155)),
+                                color: AppConst.greyTextfield),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(width: 5, color: Colors.white),
+                                  BorderSide(width: 5, color: AppConst.backgroundWhite),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(width: 5, color: Colors.white),
+                                  BorderSide(width: 5, color: AppConst.backgroundWhite),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(8.0)),
                             ),
@@ -120,20 +121,20 @@ class _SignupState extends State<Signup> {
                           controller: passwordController,
                           decoration: const InputDecoration(
                             labelText: "Password",
-                            fillColor: Colors.white,
+                            fillColor: AppConst.backgroundWhite,
                             filled: true,
                             hintText: "Enter Password",
                             hintStyle: TextStyle(
-                                color: Color.fromARGB(255, 155, 155, 155)),
+                                color: AppConst.greyTextfield),
                             labelStyle: TextStyle(
-                                color: Color.fromARGB(255, 155, 155, 155)),
+                                color: AppConst.greyTextfield),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(width: 5, color: Colors.white),
+                                  BorderSide(width: 5, color: AppConst.backgroundWhite),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(width: 5, color: Colors.white),
+                                  BorderSide(width: 5, color: AppConst.backgroundWhite),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(8.0)),
                             ),
@@ -154,20 +155,20 @@ class _SignupState extends State<Signup> {
                           controller: nameController,
                           decoration: const InputDecoration(
                             labelText: "Name",
-                            fillColor: Colors.white,
+                            fillColor: AppConst.backgroundWhite,
                             filled: true,
                             hintText: "Enter Name",
                             hintStyle: TextStyle(
-                                color: Color.fromARGB(255, 155, 155, 155)),
+                                color: AppConst.greyTextfield),
                             labelStyle: TextStyle(
-                                color: Color.fromARGB(255, 155, 155, 155)),
+                                color: AppConst.greyTextfield),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(width: 5, color: Colors.white),
+                                  BorderSide(width: 5, color: AppConst.backgroundWhite),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(width: 5, color: Colors.white),
+                                  BorderSide(width: 5, color: AppConst.backgroundWhite),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(8.0)),
                             ),
@@ -189,14 +190,14 @@ class _SignupState extends State<Signup> {
                               child: ElevatedButton(
                                 style: const ButtonStyle(
                                   backgroundColor: WidgetStatePropertyAll(
-                                      Color.fromARGB(255, 96, 85, 216)),
+                                      AppConst.themeColorPurple),
                                   elevation: WidgetStatePropertyAll(30),
                                 ),
                                 onPressed: handleSignup,
                                 child: Text(
                                   "Sign Up",
                                   style: GoogleFonts.poppins(
-                                      color: Colors.white, fontSize: 30),
+                                      color: AppConst.backgroundWhite, fontSize: 30),
                                 ),
                               ),
                             ),
@@ -211,7 +212,7 @@ class _SignupState extends State<Signup> {
                               "Login",
                               style: GoogleFonts.poppins(
                                   fontSize: 20,
-                                  color: Colors.blue,
+                                  color: AppConst.blueColor,
                                   fontWeight: FontWeight.bold),
                             ),
                             onTap: () {
