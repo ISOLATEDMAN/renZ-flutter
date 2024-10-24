@@ -57,7 +57,7 @@ class _SignupState extends State<Signup> {
               child:BlocBuilder<AuthsBloc, AuthsState>(
                 builder: (context, state) {
                   if(state is IsLoading){
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
                               }

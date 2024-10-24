@@ -1,16 +1,10 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:frontend/Screens/Home.dart';
 import 'package:frontend/Screens/auths/signup.dart';
 import 'package:frontend/Screens/baseBottomNavBar.dart';
 import 'package:frontend/blocs/auths/bloc/auths_bloc.dart';
 import 'package:frontend/constants/appConst.dart';
-import 'package:frontend/main.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:http/http.dart' as http;
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sizer/sizer.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});

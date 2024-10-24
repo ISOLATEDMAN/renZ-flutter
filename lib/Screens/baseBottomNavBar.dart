@@ -16,10 +16,10 @@ class Basebottomnavbar extends StatefulWidget {
 class _BasebottomnavbarState extends State<Basebottomnavbar> {
   int pageIndex = 0;
   final List<Widget> pages = [
-    Home(),
-    Searchpage(),
-    Allprodpage(),
-    Profile()
+    const Home(),
+    const Searchpage(),
+    const Allprodpage(),
+    const Profile()
   ];
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class _BasebottomnavbarState extends State<Basebottomnavbar> {
       body: IndexedStack(index: pageIndex,children: pages,),
       bottomNavigationBar: Container(
         height: 8.h,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: AppConst.backgroundWhite,
           borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10))
         ),
